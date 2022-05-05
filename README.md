@@ -32,3 +32,11 @@ _more detailed description_
 _MIT_
 
 Copyright (c) _2022_ _Patty Otero_
+
+## Tests
+Describe: Pizza()
+
+Test: "It should return a Pizza object with properties for toppings, size, and pizza cost."
+Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
+Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium", pizzaCost: }
+
