@@ -43,10 +43,28 @@ Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium", p
 Describe Pizza.prototype.calculatePizzaCost()
 
 Test: "It should calculate the cost of the pizza based on toppings and size and submit it to the pizzaCost property in the pizza object."
+Code: myPizza.calculatePizzaCost();
+Expected Output: 13
 
 Describe: Order()
 
-Test: "It should return an Order object with a property for pizzas."
-Code: const myOrder = new Order(["pepperoniPizza", "whitePizza");
-Expected Output: myOrder { pizzas: ["pepperoniPizza", "whitePizza"]}
+Test: "It should return an Order object with a property for pizzas and orderCost."
+Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium"); const pepperoniPizza = new Pizza(["pepperoni", "medium"]; const myOrder = new Order(["myPizza", "pepperoniPizza");
+Expected Output: myOrder { pizzas: ["myPizza", "pepperoniPizza"], orderCost:}
 
+Describe: Order.prototype.calculateOrderCost()
+
+Test: "It should calculate the cost of the entire order based on each pizza's individual cost and submit it to the orderCost property in the order object."
+Code: myOrder.calculateOrderCost();
+ExpectedOutput: 25
+
+
+## Pizza cost-- toppings and size:
+Small : $5
+Medium : $10
+Large : $15
+Extra Large : $20
+
+Toppings:
+Meat: $2 per topping
+Veggie: $1 per topping
