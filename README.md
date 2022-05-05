@@ -44,3 +44,9 @@ Describe Pizza.prototype.calculatePizzaCost()
 
 Test: "It should calculate the cost of the pizza based on toppings and size and submit it to the pizzaCost property in the pizza object."
 
+Describe: Order()
+
+Test: "It should return an Order object with a property for pizzas."
+Code: const myOrder = new Order(["pepperoniPizza", "whitePizza");
+Expected Output: myOrder { pizzas: ["pepperoniPizza", "whitePizza"]}
+
