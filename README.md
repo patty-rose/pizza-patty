@@ -40,3 +40,7 @@ Test: "It should return a Pizza object with properties for toppings, size, and p
 Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium");
 Expected Output: Pizza { toppings: ["anchovies", "pineapple"], size: "medium", pizzaCost: }
 
+Describe Pizza.prototype.calculatePizzaCost()
+
+Test: "It should calculate the cost of the pizza based on toppings and size and submit it to the pizzaCost property in the pizza object."
+
