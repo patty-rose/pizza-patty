@@ -1,0 +1,39 @@
+body{
+  background-color: #fbdf02;
+  margin:50px;
+  box-sizing:border-box;
+  font-family:  "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+header{
+  min-height: 150px;
+}
+
+footer{
+  min-height: 100px;
+}
+
+.btn {
+  color: black;
+  background-color: #f1443a;
+  border: solid black;
+}
+
+.topNav{
+  overflow: hidden;
+}
+.nav{
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #f1443a;
+}
+
+.logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
