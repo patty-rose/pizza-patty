@@ -59,7 +59,7 @@ Code: myOrder.calculateOrderCost();
 ExpectedOutput: 25
 
 
-## Pizza cost-- toppings and size:
+## Pizza pricing deatils:
 Small : $5
 Medium : $10
 Large : $15
