@@ -37,3 +37,13 @@ footer{
   margin-right: auto;
   margin-bottom: 50px;
 }
+
+.menu-item-title{
+  display:block;
+  text-align: left;
+}
+
+.menu-item-price{
+  display:block;
+  float:right;
+}
