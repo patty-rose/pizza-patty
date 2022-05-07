@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/scripts.js"></script>
+  <title></title>
+</head>
+<body>
+  <div class="header">
+    <div class="top-nav">
+      <a class="nav" href="index.html">menu</a>
+      <a class="active nav" href="order.html">order</a>
+    </div>
+  </div>
+  <main>
+    <img class="logo" src="img/logo.png" alt="pizza image above text 'pizza patty'">
+    <form id="order">
+    <h3>Build-a-pizza:</h3>
+    <p>All pies unless (otherwise noted) are made with an olive oil and garlic base and freshly grated mozzarella cheese. Create your own pie from the following list of toppings:</p>
+    <form id="order">
+      <label for="size">Pizza size?</label>
+      <select class="form-control" id="size">
+        <option value="1">small $5</option>
+        <option value="2">medium $10</option>
+        <option value="3">large $15</option>
+        <option value="4">extra-large $20</option>
+      </select>
+      <label>Choose your meat toppings:</legend>
+      <div class="form-check form-switch">
+        <input type="checkbox" id="meat-toppings" name="toppings">
+        <label for="pepperoni">pepperoni</label>
+      </div>
+      <div class="form-check form-switch">
+        <input type="checkbox" id="meat-toppings" name="toppings">
+        <label for="anchovies">anchovies</label>
+      </div>
+      <div class="form-check form-switch">
+        <input type="checkbox" id="meat-toppings" name="toppings">
+        <label for="chicken">chicken</label>
+      </div>
+      <div class="form-check form-switch">
+        <input type="checkbox" id="meat-toppings" name="toppings">
+        <label for="canadian bacon">canadian bacon</label>
+      </div>
+      <div class="form-check form-switch">
+        <input type="checkbox" id="meat-toppings" name="toppings">
+        <label for="sausage">sausage</label>
+      </div>
+      <label>Choose your veggie toppings:</legend>
+      <div class="form-check form-switch">
+        <input type="checkbox" id="veggieToppings" name="toppings">
+        <label for="pineapple">pineapple</label>
+      </div>
+      <div class="form-check form-switch">
+        <input type="checkbox" id="veggieToppings" name="toppings">
+        <label for="broccoli">broccoli</label>
+      </div>
+      <div class="form-check form-switch">
+        <input type="checkbox" id="veggieToppings" name="toppings">
+        <label for="mushrooms">mushrooms</label>
+      </div>
+      <div class="form-check form-switch">
+        <input type="checkbox" id="veggieToppings" name="toppings">
+        <label for="peppers">peppers</label>
+      </div>
+      <div class="form-check form-switch">
+        <input type="checkbox" id="veggieToppings" name="toppings">
+        <label for="garlic">garlic</label>
+      </div>
+      <div class="form-check form-switch">
+        <input type="checkbox" id="veggieToppings" name="toppings">
+        <label for="olives">olives</label>
+      </div>
+      <button type="submit" class="btn btn-primary">build my pizza</button>
+    </form>
+  </main>
+    <footer><img class="logo" src="img/logo.png" alt="pizza image above text 'pizza patty'"></footer>
+  </div>
+</body>
+</html>

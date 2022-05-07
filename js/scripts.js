@@ -44,5 +44,18 @@ Order.prototype.calculateOrderCost = function(order){
 
 //User Interface Logic
 $(document).ready(function() {
-  
+  $("form#order").submit(function(event) {
+    event.preventDefault();
+    const pizzaSizeSubmitted = $("#size").val();
+    // const pizzaToppingsSubmitted = $("input#meat-toppings[type=checkbox]:checked").val();
+    console.log(pizzaSizeSubmitted);
+
+
+    var toppings = [];
+    $.each($("input[name='toppings']:checked"), function(){
+        toppings.push($(this).val());
+    });
+    console.log("My toppings are: " + toppings.join(", "));
+
+  })
 })

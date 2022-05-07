@@ -13,15 +13,12 @@ footer{
   min-height: 100px;
 }
 
-.btn {
+/* .btn {
   color: black;
   background-color: #f1443a;
   border: solid black;
-}
+} */
 
-.topNav{
-  overflow: hidden;
-}
 .nav{
   float: left;
   text-align: center;
