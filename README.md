@@ -50,7 +50,7 @@ Describe: Order()
 
 Test: "It should return an Order object with a property for pizzas and orderCost."
 Code: const myPizza = new Pizza(["anchovies", "pineapple"], "medium"); const pepperoniPizza = new Pizza(["pepperoni", "medium"]; const myOrder = new Order(["myPizza", "pepperoniPizza");
-Expected Output: myOrder { pizzas: ["myPizza", "pepperoniPizza"], orderCost:}
+Expected Output: myOrder { pizzas: [myPizza, pepperoniPizza], orderCost: 0}
 
 Describe: Order.prototype.calculateOrderCost()
 

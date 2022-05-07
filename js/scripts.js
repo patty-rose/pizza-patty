@@ -31,7 +31,10 @@ Pizza.prototype.calculatePizzaCost = function(pizza){
 
 
 // //Order object and methods
-// Order()
+function Order(pizzas){
+  this.pizzas = pizzas;
+  this.orderCost = 0;
+}
 
 // Order.prototype.calculateOrderCost()
 
