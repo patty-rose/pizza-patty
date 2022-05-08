@@ -59,14 +59,34 @@ Order.prototype.calculateOrderCost = function(){
 };
 
 // User Interface Logic
+
 function showPizzas(pizzasToDisplay) {
-  let pizzaList = $("ul#pizzas");
+  let pizzasList = $("ul#displayPizzas");
   let htmlForPizzas = "";
-  Object.keys(pizzasToDisplay.pizzas).forEach(function(key) {
-    toppings = key.toppings.join(", ");
-    htmlForPizzas += "<li>" + key.size + " pizza with " + toppings
-  });
-  pizzaList.html(htmlForPizzas)
+  for (let i = 0; i< pizzasToDisplay.length; i++) {
+    htmlForPizzas += createHTML(pizzasToDisplay[i]);
+  } pizzasList.html(htmlForPizzas);
+  return htmlForPizzas;
+}
+
+function createHTML(pizza){
+  let htmlForPizza = "";
+  let toppingsToShow = "";
+
+  if (pizza.toppings.length === 0) {
+    htmlForPizza += "<li>" + pizza.size + " cheese pizza" + "</li>";
+    return htmlForPizza;
+  } else if (pizza.toppings.length != 0) {
+    for (let i = 0; i < pizza.toppings.length; i++) {
+      if (i != pizza.toppings.length - 1) {
+        toppingsToShow += pizza.toppings[i] + ", ";
+      } else if (i = pizza.toppings.length - 1) {
+        toppingsToShow += "and " + pizza.toppings[i] + ".";
+      }
+    }
+  }
+  htmlForPizza += "<li>" + pizza.size + " pizza with " + toppingsToShow + "</li>";
+  return htmlForPizza;
 }
 
 let pizzasOnCurrentOrder = [];
@@ -81,14 +101,12 @@ $(document).ready(function() {
       toppingsSubmitted.push(this.id);
     });
 
-
     const newPizza = new Pizza(toppingsSubmitted, pizzaSizeSubmitted);
     newPizza.calculatePizzaCost();
     pizzasOnCurrentOrder.push(newPizza);
 
-    $(".displayOrder").text(showPizzas);
+    showPizzas(currentOrder.pizzas);
     $(".displayOrderCost").text(currentOrder.calculateOrderCost());
-    showPizzas(currentOrder);
-    $( 'input[type="checkbox"]' ).prop('checked', false);
+    $('input[type="checkbox"]').prop('checked', false);
   })
 })
