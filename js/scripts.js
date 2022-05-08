@@ -6,29 +6,11 @@ function Pizza(toppings, size){
   this.pizzaCost = 0;
 }  
 
-Pizza.prototype.calculatePizzaCost = function(pizza){
-  const sizeAndPrice = [["small", 5], ["medium", 10] ,["large", 15], ["extraLarge", 20]];
-  const meatToppings = ["anchovies", "pepperoni", "canadianBacon", "chicken", "sausage"];
-  const veggieToppings = ["pineapple", "broccoli", "mushrooms", "peppers", "olives", "garlic"];
+Pizza.prototype.calculatePizzaCost = function(){
   this.pizzaCost = 0
-  for (let i = 0; i < sizeAndPrice.length; i++) {
-    if (this.size === sizeAndPrice[i][0]) {
-      this.pizzaCost += sizeAndPrice[i][1];
-    }
-  }
-  for (let j = 0; j < this.toppings.length; j++) {
-    for (let k = 0; k < meatToppings.length; k++) {
-      if (meatToppings[k] === this.toppings[j]){
-      this.pizzaCost +=2;
-      }
-    } for (let l = 0; l < veggieToppings.length; l++) {
-      if (veggieToppings[l] === this.toppings[j]){
-      this.pizzaCost +=1;
-      } 
-    } 
-  } return this.pizzaCost;
+  this.pizzaCost = calculateSizeCost(this.size) + calculateToppingsCost(this.toppings);
+  return this.pizzaCost;
 };
-
 
 // //Order object and methods
 function Order(pizzas){
@@ -36,30 +18,62 @@ function Order(pizzas){
   this.orderCost = 0;
 }
 
-Order.prototype.calculateOrderCost = function(order){
+Order.prototype.calculateOrderCost = function(){
+  this.orderCost = 0;
   for (let i=0; i < this.pizzas.length; i++) {
-    this.orderCost += this.pizzas[i].pizzaCost;
+    this.orderCost += this.pizzas[i].calculatePizzaCost();
   } return this.orderCost
 };
 
+function calculateToppingsCost(toppings){
+  let toppingsCost = 0;
+  const toppingsCostMap = {
+    "pepperoni" : 2,
+    "anchovies" : 2,
+    "chicken" : 2,
+    "canadian-bacon" : 2,
+    "sausage" : 2,
+    "pineapple" : 1,
+    "broccoli" : 1,
+    "mushrooms" : 1,
+    "peppers" : 1,
+    "garlic" : 1,
+    "olives" : 1,
+  }
+  for (let i = 0; i < toppings.length; i++) {
+    let topping = toppings[i];
+    let toppingCost = toppingsCostMap[topping];
+    toppingsCost += toppingCost;
+  } return toppingsCost;
+}
+
+function calculateSizeCost(size) {
+  let sizeCost = 0;
+  const sizeCostMap = {
+    "small" : 5,
+    "medium" : 10,
+    "large" : 15,
+    "extra-large" : 20,
+  }
+  return sizeCostMap[size];
+}
+
 //User Interface Logic
+let currentOrder = new Order;
+let pizzasOnCurrentOrder = [];
+
 $(document).ready(function() {
   $("form#order").submit(function(event) {
     event.preventDefault();
     const pizzaSizeSubmitted = $("#size").val();
-    // const pizzaToppingsSubmitted = $("input[name="toppings":checked).val();
-
-
     let toppingsSubmitted = [];
+
     $('input[name="toppings"]:checked').each(function() {
-      console.log(this.id);
       toppingsSubmitted.push(this.id);
     });
-    console.log(toppingsSubmitted);
-    // pizzaToppingsSubmitted.each(function(){
-    //     toppings.push($(this).val());
-    // });
-    // console.log("My toppings are: " + toppings.join(", "));
 
+    const newPizza = new Pizza(toppingsSubmitted, pizzaSizeSubmitted);
+    newPizza.calculatePizzaCost();
+    pizzasOnCurrentOrder.push(newPizza);
   })
 })
