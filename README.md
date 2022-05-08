@@ -1,24 +1,26 @@
-# _title_
+# _pizza patty_
 
 #### By _**Patty Otero**_
 
-#### _description_
+#### _A practice website for ordering pizza from a fictional pizza place called Pizza Patty._
 
 ## Github pages site: 
-
+https://patty-rose.github.io/pizza-patty
 ## Technologies Used
 
 * _HTML_
 * _CSS_
 * _Bootstrap_
+* _Javascript_
+* _JQuery_
 
 ## Description
 
-_more detailed description_
+_A website where you can view the menu for Pizza Patty and then order pizzas by choosing size and toppings. You can order more than one pizza._
 
 ## Setup/Installation Requirements
 
-* View at Github pages site:  or follow next steps
+* View at Github pages site: https://patty-rose.github.io/pizza-patty or follow next steps
 * Clone this repository to your desktop
 * Get into your file explorer and go to the top of the directory
 * Open index.html in your browser
@@ -59,7 +61,7 @@ Code: myOrder.calculateOrderCost();
 ExpectedOutput: 25
 
 
-## Pizza pricing deatils:
+## Pizza pricing details:
 Small : $5
 Medium : $10
 Large : $15

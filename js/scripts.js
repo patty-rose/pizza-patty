@@ -59,13 +59,14 @@ Order.prototype.calculateOrderCost = function(){
 };
 
 // User Interface Logic
-
-function showPizzas(pizzas) {
-  let displayPizzasHTML = ("");
-  //loop through pizzas object
-  //let pizzaSizeDisplay = key[size];
-  //let pizza toppingsDisplay = key[toppings].join(", ");
-
+function showPizzas(pizzasToDisplay) {
+  let pizzaList = $("ul#pizzas");
+  let htmlForPizzas = "";
+  Object.keys(pizzasToDisplay.pizzas).forEach(function(key) {
+    toppings = key.toppings.join(", ");
+    htmlForPizzas += "<li>" + key.size + " pizza with " + toppings
+  });
+  pizzaList.html(htmlForPizzas)
 }
 
 let pizzasOnCurrentOrder = [];
@@ -85,8 +86,9 @@ $(document).ready(function() {
     newPizza.calculatePizzaCost();
     pizzasOnCurrentOrder.push(newPizza);
 
-    $(".displayOrder").text(pizzasOnCurrentOrder);
+    $(".displayOrder").text(showPizzas);
     $(".displayOrderCost").text(currentOrder.calculateOrderCost());
+    showPizzas(currentOrder);
     $( 'input[type="checkbox"]' ).prop('checked', false);
   })
 })
