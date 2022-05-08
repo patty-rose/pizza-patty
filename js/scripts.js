@@ -47,15 +47,19 @@ $(document).ready(function() {
   $("form#order").submit(function(event) {
     event.preventDefault();
     const pizzaSizeSubmitted = $("#size").val();
-    // const pizzaToppingsSubmitted = $("input#meat-toppings[type=checkbox]:checked").val();
-    console.log(pizzaSizeSubmitted);
+    // const pizzaToppingsSubmitted = $("input[name="toppings":checked).val();
 
 
-    var toppings = [];
-    $.each($("input[name='toppings']:checked"), function(){
-        toppings.push($(this).val());
+    let toppingsSubmitted = [];
+    $('input[name="toppings"]:checked').each(function() {
+      console.log(this.id);
+      toppingsSubmitted.push(this.id);
     });
-    console.log("My toppings are: " + toppings.join(", "));
+    console.log(toppingsSubmitted);
+    // pizzaToppingsSubmitted.each(function(){
+    //     toppings.push($(this).val());
+    // });
+    // console.log("My toppings are: " + toppings.join(", "));
 
   })
 })
